@@ -1,1 +1,1 @@
-export 'otp_page.dart';
+export 'code_otp_widget.dart';

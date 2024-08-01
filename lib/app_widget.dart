@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'pages/pages.dart';
+import 'package:otp_input/pages/home_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -13,7 +12,7 @@ class AppWidget extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const OTPScreen(),
+      home: const HomePage(),
     );
   }
 }
