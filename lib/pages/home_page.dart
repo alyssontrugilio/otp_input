@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CodeOtpWidget(
+              otpLength: 6,
               onChanged: (value) {
                 setState(() {
                   codeValue = value;

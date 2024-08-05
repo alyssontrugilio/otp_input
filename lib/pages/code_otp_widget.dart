@@ -3,9 +3,12 @@ import 'package:flutter/services.dart';
 
 class CodeOtpWidget extends StatefulWidget {
   final void Function(String) onChanged;
+  final int otpLength;
+
   const CodeOtpWidget({
     super.key,
     required this.onChanged,
+    required this.otpLength,
   });
 
   @override
@@ -15,7 +18,6 @@ class CodeOtpWidget extends StatefulWidget {
 class CodeOtpWidgetState extends State<CodeOtpWidget> {
   final TextEditingController _controller = TextEditingController();
   final FocusNode _focusNode = FocusNode();
-  final int _otpLength = 6;
 
   @override
   void initState() {
@@ -54,7 +56,7 @@ class CodeOtpWidgetState extends State<CodeOtpWidget> {
                 keyboardType: TextInputType.number,
                 inputFormatters: [
                   FilteringTextInputFormatter.digitsOnly,
-                  LengthLimitingTextInputFormatter(_otpLength),
+                  LengthLimitingTextInputFormatter(widget.otpLength),
                 ],
                 decoration: const InputDecoration(
                   border: InputBorder.none,
@@ -67,7 +69,7 @@ class CodeOtpWidgetState extends State<CodeOtpWidget> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(_otpLength, (index) {
+            children: List.generate(widget.otpLength, (index) {
               return Container(
                 width: 50,
                 height: 55,
@@ -98,7 +100,7 @@ class CodeOtpWidgetState extends State<CodeOtpWidget> {
             top: 0,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(_otpLength, (index) {
+              children: List.generate(widget.otpLength, (index) {
                 return Container(
                   width: 50,
                   height: 55,
