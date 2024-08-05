@@ -73,7 +73,7 @@ class CodeOtpWidgetState extends State<CodeOtpWidget> {
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: index == _controller.selection.baseOffset
-                          ? (_focusNode.hasFocus ? Colors.blue : Colors.black)
+                          ? (_focusNode.hasFocus ? Colors.green : Colors.black)
                           : Colors.black,
                       width: 2,
                     ),
