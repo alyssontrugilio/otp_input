@@ -22,11 +22,15 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CodeOtpWidget(
+              showCursor: true,
+              // hintText: '2',
               otpLength: 6,
               onChanged: (value) {
-                setState(() {
-                  codeValue = value;
-                });
+                setState(
+                  () {
+                    codeValue = value;
+                  },
+                );
               },
             ),
             TextButton(
